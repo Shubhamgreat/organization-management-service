@@ -96,7 +96,6 @@ org_<tenant2>
 
 ...
 
-text
 
 ---
 
@@ -135,7 +134,6 @@ text
 ├── .env
 └── README.md
 
-text
 
 ---
 
@@ -151,7 +149,6 @@ text
 git clone <your-repo-url>.git
 cd organization-management-service
 
-text
 
 ### 3. Create and activate virtual environment
 
@@ -163,13 +160,11 @@ Linux / macOS
 python -m venv venv
 source venv/bin/activate
 
-text
 
 ### 4. Install dependencies
 
 pip install -r requirements.txt
 
-text
 
 ### 5. Configure environment variables
 
@@ -181,20 +176,17 @@ SECRET_KEY=your-secret-key-here-change-in-production
 ALGORITHM=HS256
 ACCESS_TOKEN_EXPIRE_MINUTES=30
 
-text
 
 ### 6. Run FastAPI app
 
 uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 
-text
 
 Shubham(SRM), [22:33]
 Open Swagger UI:
 
 http://localhost:8000/docs
 
-text
 
 ---
 
@@ -215,26 +207,22 @@ SECRET_KEY=your-secret-key-here-change-in-production
 ALGORITHM=HS256
 ACCESS_TOKEN_EXPIRE_MINUTES=30
 
-text
 
 ### 3. Build and run
 
 docker compose build
 docker compose up
 
-text
 
 The API will be available at:
 
 http://localhost:9000/docs
 
-text
 
 To stop:
 
 docker compose down
 
-text
 
 ---
 
@@ -252,7 +240,6 @@ Body:
 "password": "Abc123!"
 }
 
-text
 
 Behavior:
 
@@ -278,7 +265,6 @@ Response (example):
 "updated_at": "2025-12-12T15:39:43.749036"
 }
 
-text
 
 Returns 404 if organization does not exist.
 
@@ -295,7 +281,6 @@ Body:
 "password": "Abc123!"
 }
 
-text
 
 Response:
 
@@ -306,7 +291,6 @@ Response:
 "organization_name": "TestCorp"
 }
 
-text
 
 JWT payload includes:
 
@@ -318,7 +302,6 @@ Use this token as:
 
 Authorization: Bearer <access_token>
 
-text
 
 on protected endpoints.
 
@@ -338,7 +321,6 @@ Body:
 "password": "NewPass123"
 }
 
-text
 
 Behavior:
 
