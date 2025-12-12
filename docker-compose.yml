@@ -1,0 +1,25 @@
+services:
+  api:
+    build: .
+    container_name: org-management-api
+    restart: always
+    env_file:
+      - .env
+    environment:
+      MONGODB_URL: mongodb://mongo:27017
+      MASTER_DB_NAME: master_database
+    ports:
+      - "9000:8000"  # Now accessible at http://localhost:9000
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo:7
+    container_name: org-management-mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
